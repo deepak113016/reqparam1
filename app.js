@@ -1,7 +1,11 @@
 var exp = require("express");
-var app = exp();
+const favicon = require('express-favicon');
 
+var app = exp();
 //var port = process.env.PORT || 4000;
+
+app.use(favicon(__dirname + '/public/favicon.png'));
+
 app.set('port', (process.env.PORT || 5000)); 
 app.get('/',function(req,res){
     res.send("Hello World ");
